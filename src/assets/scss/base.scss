@@ -1,79 +1,112 @@
 :root {
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+	--c-ocean-blue: #48dfe3;
+	--c-dark-blue: #25aed4;
+	--c-white: rgba(250, 250, 250);
+	--c-black: rgba(0, 0, 0, 0.9);
+	--c-black-mute: rgb(20, 20, 20);
+	--c-grey: rgb(74, 74, 74);
+	--c-light-grey: rgb(240, 240, 240);
+
+	--c-bg-dark: rgb(42, 42, 42);
+	--c-bg-dark-grey: rgb(47, 47, 47);
 }
 
-/* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+	--color-background: var(--c-white);
+	--color-background-grey: var(--c-light-grey);
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+	--nav-background-color: var(--c-white);
+	--nav-hamburger-color: var(--c-black);
+	--nav-link-color: var(--c-black);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+	--card-box-shadow: rgba(0, 0, 0, 0.2);
+	--card-background-color: var(--c-white);
 
+	--color-border: var(--c-black);
+	--color-border-grey: var(--c-grey);
+	--color-border-hover: var(--c-ocean-blue);
+
+	--button-background-color: transparent;
+	--button-background-color-accent: var(--c-ocean-blue);
+	--button-background-color-accent-hover: var(--c-dark-blue);
+
+	--color-heading: var(--c-black);
+	--color-heading-span: var(--c-ocean-blue);
+	--color-text: var(--c-black);
+
+	--icon-background-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+	:root {
+		--color-background: var(--c-bg-dark);
+		--color-background-grey: var(--c-bg-dark-grey);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+		--nav-background-color: var(--c-bg-dark);
+		--nav-hamburger-color: var(--c-white);
+		--nav-link-color: var(--c-white);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+		--card-box-shadow: rgba(255, 255, 255, 0.2);
+		--card-background-color: var(--c-grey);
+
+		--color-border: var(--c-white);
+		--color-border-hover: var(--c-ocean-blue);
+
+		--button-background-color: transparent;
+		--button-background-color-accent: var(--c-ocean-blue);
+		--button-background-color-accent-hover: var(--c-dark-blue);
+
+		--color-heading: var(--c-black);
+		--color-heading-span: var(--c-ocean-blue);
+		--color-text: var(--c-white);
+
+		--icon-background-color: var(--c-white);
+	}
 }
-
-
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 img {
-  height: auto;
+	height: auto;
 }
 
 input,
 button,
 textarea,
 select {
-  font-family: inherit;
+	font-family: inherit;
 }
 
 button {
-  border: none;
-  cursor: pointer;
+	border: none;
+	cursor: pointer;
 }
 
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }

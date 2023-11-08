@@ -1,18 +1,20 @@
 <template>
-	<nav>
+	<nav id="navbar">
 		<div class="container">
+			<a href="#banner">
 				<div class="logo-container">
 					<img
 						src="../../assets/img/logo-1.svg"
 						alt="stack of books" />
 					Booker
 				</div>
+			</a>
 
 			<div class="menu" :class="{ menuActive: menuActive }">
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Pricing</a></li>
-					<li><a href="">About</a></li>
+					<li><a @click="handleMenu" href="#banner">Home</a></li>
+					<li><a @click="handleMenu" href="#best">About</a></li>
+					<li><a @click="handleMenu" href="#pricing">Pricing</a></li>
 				</ul>
 				<div class="auth">
 					<base-button mode="accent">Sign up</base-button>
@@ -43,15 +45,29 @@ const handleMenu = () => {
 	hamburgerActive.value = !hamburgerActive.value;
 	menuActive.value = !menuActive.value;
 };
+
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+	let currentScrollPos = window.pageYOffset;
+	if (menuActive.value !== true) {
+		if (prevScrollpos > currentScrollPos) {
+			document.getElementById("navbar").style.top = "0";
+		} else {
+			document.getElementById("navbar").style.top = "-130px";
+		}
+		prevScrollpos = currentScrollPos;
+	}
+};
 </script>
 
 <style lang="scss" scoped>
 nav {
 	position: fixed;
-	background-color: white;
+	background-color: var(--nav-background-color);
 	width: 100%;
 	padding: 1em;
 	z-index: 10;
+	transition: top 0.3s ease-in;
 	.container {
 		display: flex;
 		align-items: center;
@@ -62,7 +78,7 @@ nav {
 	}
 
 	.menu {
-		position: absolute;
+		position: fixed;
 		width: 100vw;
 		height: 100vh;
 		display: flex;
@@ -71,7 +87,7 @@ nav {
 		justify-content: center;
 		gap: 2rem;
 		inset: 0;
-		background-color: white;
+		background-color: var(--nav-background-color);
 		translate: 120vw;
 		transition: translate 0.3s ease-out;
 		z-index: 100;
@@ -80,11 +96,13 @@ nav {
 		}
 	}
 	.logo-container {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		cursor: pointer;
 	}
 	img {
-		width: 60px;
+		width: 50px;
 	}
 	ul {
 		display: flex;
@@ -102,7 +120,7 @@ nav {
 
 .hamburger {
 	position: relative;
-	background-color: white;
+	background-color: transparent;
 	padding: 1em;
 	width: 40px;
 	z-index: 1000;
@@ -111,9 +129,9 @@ nav {
 		position: absolute;
 		height: 4px;
 		width: 100%;
-		background-color: black;
+		background-color: var(--nav-hamburger-color);
 		transition: all 0.3s ease-out;
-    border-radius: 10px;
+		border-radius: 10px;
 		&:first-child {
 			top: 0;
 		}
@@ -140,7 +158,6 @@ nav {
 	}
 
 	&.active .hamburger-item:nth-child(2) {
-		// opacity: 0;
 		left: 0;
 		width: 85%;
 	}
@@ -148,7 +165,7 @@ nav {
 
 a {
 	position: relative;
-	color: black;
+	color: var(--nav-link-color);
 	&::before {
 		content: "";
 		position: absolute;
@@ -157,7 +174,7 @@ a {
 		height: 2px;
 		width: 100%;
 		scale: 0;
-		background-color: black;
+		background-color: var(--nav-link-color);
 		translate: -50%;
 		transition: scale 0.3s;
 	}

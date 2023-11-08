@@ -1,5 +1,5 @@
 <template>
-	<section :class="[bg]">
+	<section :class="[bg]" :id="id">
 		<div :data-type="width">
 			<slot></slot>
 		</div>
@@ -7,15 +7,13 @@
 </template>
 
 <script setup>
-const props = defineProps(["bg", "width"]);
+const props = defineProps(["bg", "width", "id"]);
 </script>
 
 <style lang="scss" scoped>
 div {
-	padding-block: 6em;
 	max-width: 60rem;
 	margin-inline: auto;
-	padding-inline: 1em;
 	&[data-type="narrow"] {
 		max-width: 55rem;
 	}
@@ -28,14 +26,14 @@ div {
 }
 
 section {
+	padding-block: 6em;
+	padding-inline: 1em;
+
 	&.light-grey {
-		background-color: rgb(240, 240, 240);
-	}
-	&.light-blue {
-		background-color: #eed;
+		background-color: var(--color-background-grey);
 	}
 	&.white {
-		background-color: #fff;
+		background-color: var(--color-background);
 	}
 }
 </style>

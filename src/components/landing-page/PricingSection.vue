@@ -1,10 +1,13 @@
 <template>
-	<base-section bg="light-grey" width="wide">
-		<h2>Affordable & Simple <span>Pricing</span></h2>
-		<p>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi ad
-			iure vero aut ullam in eius unde odio similique quisquam.
-		</p>
+	<base-section bg="light-grey" width="wide" id="pricing">
+		<base-heading>
+			<template #title>Affordable & Simple </template>
+			<template #span>Pricing</template>
+			<template #text>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+				ad iure vero aut ullam in eius unde odio similique quisquam.
+			</template>
+		</base-heading>
 		<div class="container">
 			<base-card>
 				<div class="heading">
@@ -153,19 +156,12 @@
 <script></script>
 
 <style lang="scss" scoped>
-p {
-	text-align: center;
-	margin-inline: auto;
-	margin-block: 1em;
-}
 .container {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
 }
-.card {
-  background-color: #fff;
-}
+
 h3 {
 	display: flex;
 	justify-content: space-between;

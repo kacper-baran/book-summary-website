@@ -1,12 +1,13 @@
 <template>
 	<base-section bg="white" width="narrow">
-		<div class="heading">
-			<h2>Plus more <span>Useful Features</span></h2>
-			<p>
+  <base-heading>
+  <template #title>Plus more </template>
+			<template #span>Useful Features</template>
+			<template #text>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
 				aliquam provident natus maxime, quas a.
-			</p>
-		</div>
+			</template>
+  </base-heading>
 		<div class="body">
 			<base-card
 				><img src="../../assets/img/notes.svg" alt="notes icon" />

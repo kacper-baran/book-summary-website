@@ -1,5 +1,5 @@
 <template>
-	<base-section bg="white" width="full-bleed">
+	<base-section bg="white" width="full-bleed" id="banner">
 		<div class="full-width-split-screen">
 			<div class="text">
 				<h1>
@@ -25,11 +25,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-:root {
-	--wrapper-padding-inline: 2rem;
-  --section-padding-block: 5rem;
-	--wrapper-max-width: 50rem;
-}
 
 
 $wrapper-padding-inline: 2rem;
@@ -41,7 +36,10 @@ section {
 	width: 100vw;
 	min-height: 100vh;
   padding-block: $section-padding-block;
+}
 
+#banner {
+  padding: 0;
 }
 
 img {

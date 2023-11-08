@@ -1,6 +1,13 @@
 <template>
-	<base-section bg="light-grey">
-		<h2>Why are we the <span>best?</span></h2>
+	<base-section bg="light-grey" id="best">
+		<base-heading>
+			<template #title>Why are we </template>
+			<template #span>the best?</template>
+			<template #text>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+				laudantium!
+			</template>
+		</base-heading>
 		<div class="container">
 			<div class="card">
 				<img src="../../assets/img/checkbox.svg" alt="check icon" />
@@ -35,30 +42,28 @@ import NewsLetter from "./NewsLetter.vue";
 </script>
 
 <style lang="scss" scoped>
-
 .container {
 	display: flex;
-  flex-direction: column;
+	flex-direction: column;
 	gap: 3rem;
 }
 .card {
 	text-align: center;
-  max-width: 300px;
-  margin-inline: auto;
+	max-width: 300px;
+	margin-inline: auto;
 	& > *:where(:not(:first-child)) {
 		margin-top: 1rem;
 	}
 	img {
 		width: 50px;
-	}
-	p {
-		color: #222;
+    background-color: var(--icon-background-color);
+    border-radius: 8px;
 	}
 }
 
 @media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
+	.container {
+		flex-direction: row;
+	}
 }
 </style>

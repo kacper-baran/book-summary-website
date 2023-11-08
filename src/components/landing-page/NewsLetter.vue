@@ -1,5 +1,5 @@
 <template>
-	<base-section width="wide">
+	<base-section bg="white" width="wide">
 		<div class="card">
 			<div class="card-header">
 				<h2>Sign up to news letter👋</h2>
@@ -50,7 +50,8 @@ h2 {
 
 	input {
 		width: 100%;
-		border: 1px solid #ddd;
+		border: 1px solid;
+    border-color: var(--color-border-grey);
 		font-size: 1rem;
 		border-radius: 5rem;
 		padding: 1em;
@@ -59,6 +60,7 @@ h2 {
 		width: 100%;
 		font-size: 0.8rem;
 		&:hover {
+      border-color: var(--border-color);
 			background-color: #fff;
 		}
 	}

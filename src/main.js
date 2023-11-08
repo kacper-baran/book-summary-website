@@ -8,6 +8,7 @@ import router from "./router";
 import BaseSection from "./components/base/BaseSection.vue";
 import BaseButton from "./components/base/BaseButton.vue";
 import BaseCard from "./components/base/BaseCard.vue";
+import BaseHeading from "./components/base/BaseHeading.vue";
 
 const app = createApp(App);
 
@@ -17,4 +18,5 @@ app.use(router);
 app.component('base-section', BaseSection);
 app.component('base-button', BaseButton);
 app.component('base-card', BaseCard);
+app.component('base-heading', BaseHeading);
 app.mount("#app");

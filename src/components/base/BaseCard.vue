@@ -7,14 +7,19 @@
 <script></script>
 
 <style lang="scss" scoped>
+
 div {
-	border: 1px solid grey;
-	padding: 1.5em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  transition: border-color .3s;
+  padding: 1.5em;
+	border: 1px solid;
+  border-color: var(--color-border);
+	box-shadow: 0 0 10px var(--card-box-shadow);
+  background-color: var(--card-background-color);
+	border-radius: 10px;
+	transition: border-color 0.3s, scale .3s;
+  cursor: pointer;
 	&:hover {
-		border-color: #48dfe3;
+		border-color: var(--c-ocean-blue);
+    scale: 1.02;
 	}
 }
 </style>

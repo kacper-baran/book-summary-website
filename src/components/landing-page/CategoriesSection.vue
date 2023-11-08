@@ -1,14 +1,15 @@
 <template>
 	<base-section bg="white" width="wide">
-		<div class="heading">
-			<h2>Learn from Books Worth<span> Your Time</span></h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam,
-				placeat vero, rem eligendi magnam eius quod laudantium modi cum
-				nulla nobis ducimus minus commodi nesciunt laborum officia autem
-				veritatis! Doloremque.
-			</p>
-		</div>
+		<base-heading>
+			<template #title>Learn from Books Worth </template>
+			<template #span>Your Time</template>
+			<template #text
+				>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+				Ipsam, placeat vero, rem eligendi magnam eius quod laudantium
+				modi cum nulla nobis ducimus minus commodi nesciunt laborum
+				officia autem veritatis! Doloremque.</template
+			>
+		</base-heading>
 		<div class="container">
 			<base-card>
 				<img
@@ -58,12 +59,6 @@ section {
 	text-align: center;
 }
 
-.heading {
-	text-align: center;
-	margin-bottom: 2em;
-	width: 60%;
-	margin-inline: auto;
-}
 .card {
 	display: flex;
 	justify-content: center;
@@ -80,9 +75,11 @@ section {
 	gap: 1em;
 	text-align: center;
 }
-
+p {
+  color: var(--color-text);
+}
 p:first-of-type {
-	margin-top: 4em;
+	margin-top: 2em;
 }
 p:last-of-type {
 	margin-bottom: 1em;
