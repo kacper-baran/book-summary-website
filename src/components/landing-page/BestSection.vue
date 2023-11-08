@@ -1,0 +1,64 @@
+<template>
+	<base-section bg="light-grey">
+		<h2>Why are we the <span>best?</span></h2>
+		<div class="container">
+			<div class="card">
+				<img src="../../assets/img/checkbox.svg" alt="check icon" />
+				<h3>Easy to understand</h3>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Quae saepe asperiores autem commodi doloribus nihil!
+				</p>
+			</div>
+			<div class="card">
+				<img src="../../assets/img/users.svg" alt="users icon" />
+				<h3>Community</h3>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Porro libero obcaecati, aliquam possimus cupiditate optio!
+				</p>
+			</div>
+			<div class="card">
+				<img src="../../assets/img/database.svg" alt="database icon" />
+				<h3>Large database</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Debitis eius laborum nulla adipisci esse fugiat.
+				</p>
+			</div>
+		</div>
+	</base-section>
+</template>
+
+<script setup>
+import NewsLetter from "./NewsLetter.vue";
+</script>
+
+<style lang="scss" scoped>
+
+.container {
+	display: flex;
+  flex-direction: column;
+	gap: 3rem;
+}
+.card {
+	text-align: center;
+  max-width: 300px;
+  margin-inline: auto;
+	& > *:where(:not(:first-child)) {
+		margin-top: 1rem;
+	}
+	img {
+		width: 50px;
+	}
+	p {
+		color: #222;
+	}
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+</style>
