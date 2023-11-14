@@ -6,8 +6,8 @@
 				<p>Get samples of our best book guides</p>
 			</div>
 			<div class="email-input">
-				<input type="text" placeholder="Enter your email"/>
-				<base-button>Sign up now</base-button>
+				<input type="text" placeholder="Enter your email" />
+				<base-button mode="accent">Sign up now</base-button>
 			</div>
 		</div>
 	</base-section>
@@ -50,19 +50,14 @@ h2 {
 
 	input {
 		width: 100%;
-		border: 1px solid;
-    border-color: var(--color-border-grey);
 		font-size: 1rem;
+    border: none;
 		border-radius: 5rem;
 		padding: 1em;
 	}
-	button {
+	.accent {
 		width: 100%;
-		font-size: 0.8rem;
-		&:hover {
-      border-color: var(--border-color);
-			background-color: #fff;
-		}
+		border-color: white;
 	}
 }
 
@@ -79,13 +74,6 @@ h2 {
 		width: 60%;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.email-input {
-		// flex-direction: row;
-	}
-	button {
-		width: 40%;
 	}
 }
 </style>

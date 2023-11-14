@@ -25,7 +25,7 @@
 			>
 		</div>
 		<div class="button">
-			<base-button mode="accent">Sign up</base-button>
+			<base-button link to="/auth/signup" mode="accent">Sign up</base-button>
 		</div>
 	</base-section>
 </template>

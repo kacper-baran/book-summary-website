@@ -13,8 +13,12 @@
 					assumenda quod! Blanditiis?
 				</p>
 				<div class="buttons">
-					<base-button mode="accent">Sign up</base-button>
-					<base-button>Browse books</base-button>
+					<base-button link to="/auth/signup" mode="accent"
+						>Sign up</base-button
+					>
+					<base-button link to="/auth/signup"
+						>Browse books</base-button
+					>
 				</div>
 			</div>
 			<img src="../../assets/img/laptop-hero.png" alt="laptop image" />
@@ -25,8 +29,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-
-
 $wrapper-padding-inline: 2rem;
 $section-padding-block: 5rem;
 
@@ -35,11 +37,11 @@ section {
 	place-items: center;
 	width: 100vw;
 	min-height: 100vh;
-  padding-block: $section-padding-block;
+	padding-block: $section-padding-block;
 }
 
 #banner {
-  padding: 0;
+	padding-inline: 0;
 }
 
 img {
@@ -64,12 +66,12 @@ h1 {
 }
 
 .full-width-split-screen {
-  position: relative;
-  z-index: 1;
+	position: relative;
+	z-index: 1;
 }
 
 /* remove the padding so images can take up the entire height */
-.full-width-split-screen > *:where(:not(:first-child)){
+.full-width-split-screen > *:where(:not(:first-child)) {
 	margin-top: 1.5rem;
 }
 
@@ -81,11 +83,10 @@ consistency */
 }
 
 .full-width-split-screen {
-  padding-right: 0;
+	padding-right: 0;
 }
 
 @media (min-width: 900px) {
-
 	.full-width-split-screen {
 		/* outermost columns emulate the spacing from the .wrapper
      while the two inner columns divide the rest of the space

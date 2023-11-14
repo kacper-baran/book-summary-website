@@ -146,7 +146,7 @@
 								alt="circle checkmark" />Access to Community
 						</li>
 					</ul>
-					<base-button>Sign up</base-button>
+					<base-button link to="/auth/signup">Sign up</base-button>
 				</div>
 			</base-card>
 		</div>

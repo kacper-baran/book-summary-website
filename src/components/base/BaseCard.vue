@@ -16,10 +16,9 @@ div {
   background-color: var(--card-background-color);
 	border-radius: 10px;
 	transition: border-color 0.3s, scale .3s;
-  cursor: pointer;
 	&:hover {
 		border-color: var(--c-ocean-blue);
-    scale: 1.02;
+    scale: 1.005;
 	}
 }
 </style>

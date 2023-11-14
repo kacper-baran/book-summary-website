@@ -1,39 +1,38 @@
 <template>
 	<base-section width="wide" bg="white">
 		<footer>
-			<div class="logo-container">
-				<img src="../../assets/img/logo-1.svg" alt="Logo" />
-				Booker
-			</div>
+      <base-logo :to="{ hash: '#banner' }"></base-logo>
 			<div class="links">
 				<ul>
 					<li><h3>Menu</h3></li>
-					<li><a href="">Home</a></li>
-					<li><a href="">Pricing</a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Sign up</a></li>
+					<li><a href="#banner">Home</a></li>
+					<li><a href="#pricing">Pricing</a></li>
+					<li><a href="#best">About</a></li>
+					<li>
+						<router-link to="/auth/signup">Sign up</router-link>
+					</li>
 				</ul>
 				<ul>
 					<li><h3>Popular Categories</h3></li>
-					<li><a href="">Business</a></li>
-					<li><a href="">Entrepreneurship</a></li>
-					<li><a href="">Productivity</a></li>
-					<li><a href="">Mental Health</a></li>
+					<li><a href="#">Business</a></li>
+					<li><a href="#">Entrepreneurship</a></li>
+					<li><a href="#">Productivity</a></li>
+					<li><a href="#">Mental Health</a></li>
 				</ul>
 				<ul>
 					<li><h3>Popular book guides</h3></li>
-					<li><a href="">Rich dad, Poor dad</a></li>
-					<li><a href="">Atomic Habits</a></li>
+					<li><a href="#">Rich dad, Poor dad</a></li>
+					<li><a href="#">Atomic Habits</a></li>
 					<li>
-						<a href="">How to win Friends and Influence Poeple</a>
+						<a href="#">How to win Friends and Influence Poeple</a>
 					</li>
-					<li><a href="">12 Rules of life</a></li>
+					<li><a href="#">12 Rules of life</a></li>
 				</ul>
 				<ul>
 					<li><h3>Contact</h3></li>
 					<li>
 						<img src="../../assets/img/email.svg" alt="mail icon" />
-						<a href=""> email@email.com </a>
+						<a href="mailto:email@email.com"> email@email.com </a>
 					</li>
 					<li>
 						<img
@@ -44,20 +43,20 @@
 				</ul>
 			</div>
 			<div class="social">
-				<a href=""
+				<a href="#"
 					><img
 						src="../../assets/img/brand-facebook.svg"
 						alt="facebook icon"
 				/></a>
-				<a href="">
+				<a href="#">
 					<img src="../../assets/img/brand-x.svg" alt="x icon" />
 				</a>
-				<a href="">
+				<a href="#">
 					<img
 						src="../../assets/img/brand-instagram.svg"
 						alt="instagram icon" />
 				</a>
-				<a href="">
+				<a href="#">
 					<img
 						src="../../assets/img/brand-linkedin.svg"
 						alt="linkedin icon" />

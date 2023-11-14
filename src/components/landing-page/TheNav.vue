@@ -1,27 +1,35 @@
 <template>
 	<nav id="navbar">
 		<div class="container">
-			<a href="#banner">
-				<div class="logo-container">
-					<img
-						src="../../assets/img/logo-1.svg"
-						alt="stack of books" />
-					Booker
-				</div>
-			</a>
+			<base-logo :to="{ hash: '#banner' }"></base-logo>
 
-			<div class="menu" :class="{ menuActive: menuActive }">
-				<ul>
-					<li><a @click="handleMenu" href="#banner">Home</a></li>
-					<li><a @click="handleMenu" href="#best">About</a></li>
-					<li><a @click="handleMenu" href="#pricing">Pricing</a></li>
-				</ul>
-				<div class="auth">
-					<base-button mode="accent">Sign up</base-button>
-					<base-button>Log in</base-button>
-				</div>
-			</div>
-
+			<ul class="menu" :class="{ menuActive: menuActive }">
+				<li>
+					<a class="nav-link" @click="handleMenu" href="#banner">
+						Home
+					</a>
+				</li>
+				<li>
+					<a class="nav-link" @click="handleMenu" href="#best"
+						>About</a
+					>
+				</li>
+				<li>
+					<a class="nav-link" @click="handleMenu" href="#pricing"
+						>Pricing</a
+					>
+				</li>
+				<li>
+					<base-button mode="accent" link to="/auth/signup"
+						>Sign up</base-button
+					>
+				</li>
+				<li>
+					<base-button mode="flat" link to="/auth/login"
+						>Log in</base-button
+					>
+				</li>
+			</ul>
 			<button
 				class="hamburger desktop"
 				:class="{ active: hamburgerActive }"
@@ -38,24 +46,37 @@
 
 <script setup>
 import { ref } from "vue";
+import { onBeforeUnmount } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
 const menuActive = ref(false);
 const hamburgerActive = ref(false);
 
 const handleMenu = () => {
 	hamburgerActive.value = !hamburgerActive.value;
 	menuActive.value = !menuActive.value;
+	const body = document.querySelector("body");
+	body.classList.toggle("locked");
 };
+
+const navActive = ref(true);
+//Prevents errors when routing to diffrent pages
+onBeforeUnmount(() => {
+	navActive.value = false;
+});
 
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-	let currentScrollPos = window.pageYOffset;
-	if (menuActive.value !== true) {
-		if (prevScrollpos > currentScrollPos) {
-			document.getElementById("navbar").style.top = "0";
-		} else {
-			document.getElementById("navbar").style.top = "-130px";
+	if (navActive.value) {
+		let currentScrollPos = window.pageYOffset;
+		if (menuActive.value !== true) {
+			if (prevScrollpos > currentScrollPos) {
+				document.getElementById("navbar").style.top = "0";
+			} else {
+				document.getElementById("navbar").style.top = "-130px";
+			}
+			prevScrollpos = currentScrollPos;
 		}
-		prevScrollpos = currentScrollPos;
 	}
 };
 </script>
@@ -100,9 +121,13 @@ nav {
 		flex-direction: column;
 		align-items: center;
 		cursor: pointer;
+		&:hover img {
+			rotate: 90deg;
+		}
 	}
 	img {
 		width: 50px;
+		transition: rotate 0.3s;
 	}
 	ul {
 		display: flex;
@@ -163,7 +188,7 @@ nav {
 	}
 }
 
-a {
+.nav-link {
 	position: relative;
 	color: var(--nav-link-color);
 	&::before {
@@ -183,11 +208,11 @@ a {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 880px) {
 	nav {
 		.menu {
 			position: relative;
-			inset: none;
+			inset: auto;
 			height: auto;
 			width: auto;
 			translate: 0;

@@ -3,16 +3,55 @@
 body {
 	font-family: "poppins", sans-serif;
 	font-size: 1.125rem;
-  color: var(--color-text)
-
+	color: var(--color-text);
+	background-color: var(--color-background);
 }
 
-
-
-p {
-  color: var(--color-text)
-}
-
-body:has(div.menuActive) {
+body.locked {
 	position: fixed;
+}
+
+a {
+	color: var(--color-text);
+}
+
+ul {
+  list-style: none;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin-inline: auto;
+	gap: 1em;
+	width: 100%;
+	padding: 1em;
+	.form-field {
+		display: flex;
+		flex-direction: column;
+	}
+	.buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 1em;
+		a:last-child {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	input {
+		border-radius: 6px;
+		padding: 0.5em;
+		border: 1px solid;
+		border-color: var(--color-border-grey);
+	}
+	h2 {
+		text-align: center;
+	}
+	p {
+		text-align: center;
+		color: rgb(180, 25, 25);
+	}
 }

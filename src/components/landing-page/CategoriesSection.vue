@@ -48,7 +48,7 @@
 		</div>
 		<p>And many more categories.</p>
 		<p>Explore all the categories you can learn from!</p>
-		<base-button>Explore Categories</base-button>
+		<base-button link to="/auth/signup">Explore Categories</base-button>
 	</base-section>
 </template>
 
@@ -76,7 +76,7 @@ section {
 	text-align: center;
 }
 p {
-  color: var(--color-text);
+	color: var(--color-text);
 }
 p:first-of-type {
 	margin-top: 2em;
