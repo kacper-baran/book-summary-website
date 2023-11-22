@@ -25,12 +25,12 @@
 					</a>
 				</li>
 				<li>
-					<base-button mode="accent" link to="/auth/signup"
+					<base-button mode="accent" @click="closeMenu" link to="/auth/signup"
 						>Sign up</base-button
 					>
 				</li>
 				<li>
-					<base-button mode="flat" link to="/auth/login"
+					<base-button mode="flat" @click="closeMenu" link to="/auth/login"
 						>Log in</base-button
 					>
 				</li>
