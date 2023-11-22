@@ -1,0 +1,1 @@
+import{h as a,A as n,B as c,r as u,y as t,o as _,c as m,b as i,n as k}from"./index-08fce38b.js";const l={key:0},h={__name:"BookDetailsPage",setup(p){const s=a(),e=n(),o=c();return s.autoLogin(),e.getUserData(),o.getBooks(),(B,S)=>{const r=u("router-view");return t(e).user&&t(o).allBooks?(_(),m("div",l,[i(r)])):k("",!0)}}};export{h as default};
