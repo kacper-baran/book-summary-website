@@ -40,16 +40,7 @@ export const useBooksStore = defineStore("books", {
 			return books;
 		},
 		popularBooks() {
-			const popularBooks = this.books
-				.toSorted((a, b) => {
-					if (b.favorites < a.favorites) {
-						return -1;
-					} else if (b.favorites > a.favorites) {
-						return 1;
-					}
-					return 0;
-				})
-				.slice(0, 4);
+			const popularBooks = this.books.slice(0, 4);
 			return popularBooks;
 		},
 		savedBooks() {
