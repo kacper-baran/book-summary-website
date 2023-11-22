@@ -22,7 +22,7 @@ const AboutSection = () => import("../components/landing-page/BestSection.vue");
 const PricingSection = () =>
 	import("../components/landing-page/PricingSection.vue");
 const router = createRouter({
-	mode: "hash",
+  history: createWebHistory(),
 	scrollBehavior(_, _2, savedPosition) {
 		if (savedPosition) {
 			return savedPosition;
