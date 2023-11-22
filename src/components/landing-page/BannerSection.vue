@@ -21,7 +21,7 @@
 					>
 				</div>
 			</div>
-			<img src="../../assets/img/laptop-hero.png" alt="laptop image" />
+			<img src="../../assets/img/hero.png" alt="laptop image" />
 		</div>
 	</base-section>
 </template>

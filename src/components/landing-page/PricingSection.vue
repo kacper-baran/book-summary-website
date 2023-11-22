@@ -17,39 +17,31 @@
 				<div class="body">
 					<ul>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
 							30-day free trial
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							+1000 book summaries
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
 							Unlimited access
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							Mobile app
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							Audio Narrations
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							Unlimited PDF downloads
 						</li>
 					</ul>
@@ -64,39 +56,30 @@
 				<div class="body">
 					<ul>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							30-day free trial
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							+1000 book summaries
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
+
 							Unlimited access
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
 							Mobile app
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
 							Audio Narrations
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheck.svg"
-								alt="circle checkmark" />
+							<IconCheck color="#48dfe3"></IconCheck>
 							Unlimited PDF downloads
 						</li>
 					</ul>
@@ -111,39 +94,29 @@
 				<div class="body">
 					<ul>
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />+1000 book summaries
+							<IconCheck></IconCheck>
+							+1000 book summaries
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />
+							<IconCheck></IconCheck>
 							Limited Access
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />
+							<IconCheck></IconCheck>
 							Available desktop only
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />
+							<IconCheck></IconCheck>
 							Limited Audio Narrations
 						</li>
 
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />
+							<IconCheck></IconCheck>
 							No PDF downloads
 						</li>
 						<li>
-							<img
-								src="../../assets/img/circlecheckblack.svg"
-								alt="circle checkmark" />Access to Community
+							<IconCheck></IconCheck>
+							Access to Community
 						</li>
 					</ul>
 					<base-button link to="/auth/signup">Sign up</base-button>
@@ -153,7 +126,9 @@
 	</base-section>
 </template>
 
-<script></script>
+<script setup>
+import { IconCheck } from "@tabler/icons-vue";
+</script>
 
 <style lang="scss" scoped>
 .container {

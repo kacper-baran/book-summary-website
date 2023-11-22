@@ -1,13 +1,14 @@
 <template>
 	<the-nav></the-nav>
 	<banner-section></banner-section>
-  <best-section></best-section>
-  <news-letter></news-letter>
-  <categories-section></categories-section>
-  <pricing-section></pricing-section>
-  <features-section></features-section>
-  <opinions-section></opinions-section>
-  <footer-section></footer-section>
+	<best-section></best-section>
+	<news-letter></news-letter>
+	<categories-section></categories-section>
+	<pricing-section></pricing-section>
+	<features-section></features-section>
+	<opinions-section></opinions-section>
+	<contact-section></contact-section>
+	<footer-section></footer-section>
 </template>
 
 <script setup>
@@ -19,6 +20,7 @@ import CategoriesSection from "../components/landing-page/CategoriesSection.vue"
 import PricingSection from "../components/landing-page/PricingSection.vue";
 import FeaturesSection from "../components/landing-page/FeaturesSection.vue";
 import OpinionsSection from "../components/landing-page/OpinionsSection.vue";
+import ContactSection from "../components/landing-page/ContactSection.vue";
 import FooterSection from "../components/landing-page/FooterSection.vue";
 </script>
 

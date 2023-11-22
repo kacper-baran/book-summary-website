@@ -8,7 +8,7 @@
 				eveniet porro rerum quaerat reiciendis tempore.
 			</template>
 		</base-heading>
-		
+
 		<base-card>
 			<p class="quote" v-if="currentOpinionActive === 'userOne'">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
@@ -37,12 +37,11 @@
 					:class="{ active: opinonThreeActive }"></div>
 			</div>
 			<div class="controls">
-				<img
+				<IconArrowNarrowLeft
+					:size="35"
+					class="icon"
 					:class="{ active: backArrowVisible }"
-					@click="back"
-					class="arrow-control"
-					src="../../assets/img/arrow-left.svg"
-					alt="" />
+					@click="back"></IconArrowNarrowLeft>
 				<div
 					class="user-container"
 					v-if="currentOpinionActive === 'userOne'">
@@ -67,12 +66,11 @@
 						alt="Profile picture" />
 					William Berrycloth
 				</div>
-				<img
+				<IconArrowNarrowRight
+					:size="35"
+					class="icon"
 					:class="{ active: nextArrowVisible }"
-					@click="next"
-					class="arrow-control"
-					src="../../assets/img/arrow-right.svg"
-					alt="" />
+					@click="next"></IconArrowNarrowRight>
 			</div>
 		</base-card>
 	</base-section>
@@ -80,6 +78,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-vue";
 
 const num = ref(0);
 const nextArrowVisible = ref(true);
@@ -129,7 +128,6 @@ const opinonThreeActive = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-
 section {
 	position: relative;
 	z-index: 1;
@@ -147,18 +145,17 @@ section {
 	gap: 1em;
 	margin: 1em;
 }
-.arrow-control {
+.icon {
 	position: relative;
-	width: 40px;
 	cursor: pointer;
 	opacity: 0;
-	transition: translate 0.3s, opacity 0.3s;
+	transition: scale 0.3s, opacity 0.3s;
+	border-radius: 50%;
+	border: 1px solid #fff;
+
 	z-index: -1;
-	&:first-of-type:hover {
-		translate: -5px;
-	}
-	&:last-of-type:hover {
-		translate: 5px;
+	&:hover {
+		scale: 1.1;
 	}
 	&.active {
 		opacity: 1;
@@ -167,10 +164,11 @@ section {
 }
 
 .controls {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	place-items: center;
 	justify-content: center;
 }
-
 
 .info-block {
 	display: flex;
@@ -191,18 +189,14 @@ section {
 	}
 }
 
+.card:hover {
+	scale: 1;
+}
+
 .quote {
 	position: relative;
 	max-width: 700px;
 	margin-inline: auto;
 	margin-top: 2em;
-	&::before {
-		content: url("../../assets/img/quote.svg");
-		position: absolute;
-		top: -45px;
-		left: -20px;
-		opacity: 0.3;
-		z-index: -1;
-	}
 }
 </style>

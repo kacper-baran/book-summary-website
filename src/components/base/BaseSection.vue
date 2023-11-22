@@ -27,7 +27,7 @@ div {
 
 section {
 	padding-block: 6em;
-	padding-inline: 1em;
+	padding-inline: 2em;
 
 	&.light-grey {
 		background-color: var(--color-background-grey);

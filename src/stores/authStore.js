@@ -1,4 +1,7 @@
 import { defineStore } from "pinia";
+import { useUserStore } from "./userStore.js";
+import { useBooksStore } from "./booksStore.js";
+
 import router from "../router/index.js";
 
 export const useAuthStore = defineStore("auth", {
@@ -16,6 +19,9 @@ export const useAuthStore = defineStore("auth", {
 	},
 	actions: {
 		async auth(payload) {
+			const userStore = useUserStore();
+			const booksStore = useBooksStore();
+
 			this.error = null;
 			const action = payload.action;
 			const API_KEY = "AIzaSyAto8sH0Qauq9T2Blg-qkH6DQ3RDcijRCo";
@@ -46,7 +52,13 @@ export const useAuthStore = defineStore("auth", {
 			localStorage.setItem("userId", responseData.localId);
 
 			this.token = responseData.idToken;
-			this.userId = responseData.userId;
+			this.userId = responseData.localId;
+
+			if (action === "signup") {
+				userStore.registerUser({
+					username: payload.username,
+				});
+			}
 
 			this.isLoggedIn = true;
 			router.replace("/bookapp");
@@ -72,6 +84,19 @@ export const useAuthStore = defineStore("auth", {
 			this.error = null;
 			this.token = null;
 			this.userID = null;
+
+			router.replace("/");
+		},
+		autoLogin() {
+			const token = localStorage.getItem("token");
+			const userId = localStorage.getItem("userId");
+			if (userId && token) {
+				this.userId = userId;
+				this.token = token;
+				this.isLoggedIn = true;
+			} else {
+				router.replace("/auth/login");
+			}
 		},
 	},
 });

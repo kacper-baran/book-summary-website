@@ -2,6 +2,7 @@
 	--c-ocean-blue: #48dfe3;
 	--c-dark-blue: #25aed4;
 	--c-white: rgba(250, 250, 250);
+	--c-white-mute: rgba(235, 235, 235);
 	--c-black: rgba(0, 0, 0, 0.9);
 	--c-black-transparent: rgba(0, 0, 0, 0.2);
 	--c-white-transparent: rgba(250, 250, 250, 0.2);
@@ -9,6 +10,7 @@
 	--c-black-mute: rgb(20, 20, 20);
 	--c-grey: rgb(97, 97, 97);
 	--c-light-grey: rgb(240, 240, 240);
+	--c-grey-mute: rgb(63, 63, 63);
 
 	--c-bg-dark: rgb(42, 42, 42);
 	--c-bg-dark-grey: rgb(47, 47, 47);
@@ -25,7 +27,7 @@
 
 	--dropdown-background-color: var(--c-white);
 	--dropdown-border-color: var(--c-grey);
-	--color-li-hover: var(--c-black-transparent);
+	--color-li-hover: var(--c-ocean-blue);
 
 	--card-box-shadow: rgba(0, 0, 0, 0.2);
 	--card-background-color: var(--c-white);
@@ -56,7 +58,7 @@
 		--nav-border-color: var(--c-white);
 
 		--dropdown-background-color: var(--c-black);
-		--color-li-hover: var(--c-white-transparent);
+		--color-li-hover: var(--c-grey-mute);
 
 		--card-box-shadow: rgba(255, 255, 255, 0.2);
 		--card-background-color: var(--c-grey);

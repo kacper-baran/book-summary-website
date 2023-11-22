@@ -16,7 +16,7 @@ a {
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 form {
@@ -25,10 +25,10 @@ form {
 	margin-inline: auto;
 	gap: 1em;
 	width: 100%;
-	padding: 1em;
 	.form-field {
 		display: flex;
 		flex-direction: column;
+    gap: .3em;
 	}
 	.buttons {
 		display: flex;
@@ -41,11 +41,12 @@ form {
 			}
 		}
 	}
-	input {
-		border-radius: 6px;
+	input,
+	textarea,
+	select {
+		border-radius: 8px;
 		padding: 0.5em;
 		border: 1px solid;
-		border-color: var(--color-border-grey);
 	}
 	h2 {
 		text-align: center;

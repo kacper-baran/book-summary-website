@@ -10,7 +10,7 @@
 		</base-heading>
 		<div class="container">
 			<div class="card">
-				<img src="../../assets/img/checkbox.svg" alt="check icon" />
+				<IconCheckbox :size="48"></IconCheckbox>
 				<h3>Easy to understand</h3>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -18,7 +18,7 @@
 				</p>
 			</div>
 			<div class="card">
-				<img src="../../assets/img/users.svg" alt="users icon" />
+				<IconUsers :size="48"></IconUsers>
 				<h3>Community</h3>
 				<p>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -26,7 +26,7 @@
 				</p>
 			</div>
 			<div class="card">
-				<img src="../../assets/img/database.svg" alt="database icon" />
+				<IconServerBolt :size="48"></IconServerBolt>
 				<h3>Large database</h3>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -39,6 +39,7 @@
 
 <script setup>
 import NewsLetter from "./NewsLetter.vue";
+import { IconCheckbox, IconUsers, IconServerBolt } from "@tabler/icons-vue";
 </script>
 
 <style lang="scss" scoped>
@@ -53,11 +54,6 @@ import NewsLetter from "./NewsLetter.vue";
 	margin-inline: auto;
 	& > *:where(:not(:first-child)) {
 		margin-top: 1rem;
-	}
-	img {
-		width: 50px;
-    background-color: var(--icon-background-color);
-    border-radius: 8px;
 	}
 }
 

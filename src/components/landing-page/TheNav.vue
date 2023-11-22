@@ -1,23 +1,28 @@
 <template>
 	<nav id="navbar">
 		<div class="container">
-			<base-logo :to="{ hash: '#banner' }"></base-logo>
-
+			<base-logo :to="{ name: 'home' }"></base-logo>
 			<ul class="menu" :class="{ menuActive: menuActive }">
 				<li>
-					<a class="nav-link" @click="handleMenu" href="#banner">
+					<router-link
+						class="nav-link"
+						@click="closeMenu"
+						:to="{ name: 'home' }">
 						Home
+					</router-link>
+				</li>
+				<li>
+					<a
+						class="nav-link"
+						@click="closeMenu"
+						href="#best">
+						About
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" @click="handleMenu" href="#best"
-						>About</a
-					>
-				</li>
-				<li>
-					<a class="nav-link" @click="handleMenu" href="#pricing"
-						>Pricing</a
-					>
+					<a class="nav-link" @click="closeMenu" href="#pricing">
+						Pricing
+					</a>
 				</li>
 				<li>
 					<base-button mode="accent" link to="/auth/signup"
@@ -48,15 +53,23 @@
 import { ref } from "vue";
 import { onBeforeUnmount } from "vue";
 import { useRoute } from "vue-router";
+import { useAuthStore } from "/src/stores/authStore.js";
+const authStore = useAuthStore();
 const route = useRoute();
 const menuActive = ref(false);
 const hamburgerActive = ref(false);
 
+const body = document.querySelector("body");
 const handleMenu = () => {
 	hamburgerActive.value = !hamburgerActive.value;
 	menuActive.value = !menuActive.value;
-	const body = document.querySelector("body");
 	body.classList.toggle("locked");
+};
+
+const closeMenu = () => {
+	menuActive.value = false;
+	hamburgerActive.value = false;
+	body.classList.remove("locked");
 };
 
 const navActive = ref(true);

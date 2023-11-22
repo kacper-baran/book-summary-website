@@ -1,7 +1,7 @@
 <template>
 	<base-section width="wide" bg="white">
 		<footer>
-      <base-logo :to="{ hash: '#banner' }"></base-logo>
+			<base-logo :to="{ hash: '#banner' }"></base-logo>
 			<div class="links">
 				<ul>
 					<li><h3>Menu</h3></li>
@@ -31,41 +31,46 @@
 				<ul>
 					<li><h3>Contact</h3></li>
 					<li>
-						<img src="../../assets/img/email.svg" alt="mail icon" />
-						<a href="mailto:email@email.com"> email@email.com </a>
+						<a href="mailto:email@email.com">
+							<IconMail></IconMail>
+							email@email.com
+						</a>
 					</li>
 					<li>
-						<img
-							src="../../assets/img/location.svg"
-							alt="map point icon" />
+						<IconMapPin></IconMapPin>
 						USA
 					</li>
 				</ul>
 			</div>
 			<div class="social">
-				<a href="#"
-					><img
-						src="../../assets/img/brand-facebook.svg"
-						alt="facebook icon"
-				/></a>
 				<a href="#">
-					<img src="../../assets/img/brand-x.svg" alt="x icon" />
+					<IconBrandFacebook :size="48"></IconBrandFacebook>
 				</a>
 				<a href="#">
-					<img
-						src="../../assets/img/brand-instagram.svg"
-						alt="instagram icon" />
+					<IconBrandX :size="48"></IconBrandX>
 				</a>
 				<a href="#">
-					<img
-						src="../../assets/img/brand-linkedin.svg"
-						alt="linkedin icon" />
+					<IconBrandInstagram :size="48"></IconBrandInstagram>
+				</a>
+				<a href="#">
+					<IconBrandLinkedin :size="48"></IconBrandLinkedin>
 				</a>
 			</div>
 		</footer>
 		<p>Copyright © 2023 | All Rights Reserved</p>
 	</base-section>
 </template>
+
+<script setup>
+import {
+	IconBrandFacebook,
+	IconBrandX,
+	IconBrandInstagram,
+	IconBrandLinkedin,
+	IconMail,
+	IconMapPin,
+} from "@tabler/icons-vue";
+</script>
 
 <style lang="scss" scoped>
 .section-padding {
@@ -78,9 +83,6 @@
 	align-items: center;
 	margin-bottom: 6rem;
 	font-size: 3rem;
-	img {
-		height: 50px;
-	}
 }
 
 .links {
@@ -91,6 +93,11 @@
 ul {
 	list-style: none;
 	min-width: 180px;
+  li, li > * {
+    display: flex;
+    gap: .3em;
+    align-items: center;
+  }
 }
 
 ul:last-of-type {
@@ -112,10 +119,6 @@ a {
 	justify-content: center;
 	margin-top: 2em;
 	gap: 1em;
-	img {
-		border-radius: 8px;
-		background-color: var(--icon-background-color);
-	}
 }
 p {
 	margin-top: 2em;

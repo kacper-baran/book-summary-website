@@ -55,5 +55,14 @@ a {
 			background-color: var(--button-background-color-accent-hover);
 		}
 	}
+	&.delete {
+		border-color: red;
+		background-color: var(--button-background-color);
+		color: red;
+		&:hover {
+			background-color: red;
+			color: black;
+		}
+	}
 }
 </style>

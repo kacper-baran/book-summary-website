@@ -6,9 +6,9 @@
 				<slot name="span"></slot>
 			</span>
 		</h2>
-		<p>
+		<div>
 			<slot name="text"></slot>
-		</p>
+		</div>
 	</div>
 </template>
 
@@ -18,8 +18,8 @@
 .heading {
 	margin-bottom: 2rem;
 	text-align: center;
-	p {
-		max-width: 700px;
+	div {
+		max-width: 900px;
 		margin-inline: auto;
 	}
 }

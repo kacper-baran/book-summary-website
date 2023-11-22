@@ -1,6 +1,6 @@
 <template>
 	<auth-container>
-		<form @submit.prevent="submitForm">
+		<form @submit.prevent="submitForm" v-if="!isLoading">
 			<h2>{{ title }}</h2>
 			<div class="form-field">
 				<label for="email">E-mail:</label>
@@ -11,6 +11,15 @@
 					v-model.trim="email"
 					placeholder="Enter your e-mail" />
 			</div>
+			<div class="form-field" v-if="action === 'signup'">
+				<label for="email">Username</label>
+				<input
+					type="text"
+					id="username"
+					name="username"
+					v-model.trim="username"
+					placeholder="Enter your username" />
+			</div>
 			<div class="form-field">
 				<label for="password">Password:</label>
 				<input
@@ -20,13 +29,9 @@
 					v-model.trim="password"
 					placeholder="Enter your password" />
 			</div>
-			<p class="error" v-if="!isLoading">
+			<p class="error">
 				{{ error || storeError }}
 			</p>
-			<div v-else>
-				<base-spinner></base-spinner>
-			</div>
-
 			<div class="buttons">
 				<base-button type="submit" mode="accent">{{
 					submitButtonCaption
@@ -36,13 +41,15 @@
 				}}</base-button>
 			</div>
 		</form>
+		<div v-if="isLoading">
+			<base-loader></base-loader>
+		</div>
 	</auth-container>
 </template>
 
 <script setup>
 import AuthContainer from "/src/components/auth/AuthContainer.vue";
-import BaseSpinner from "/src/components/base/BaseSpinner.vue";
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useAuthStore } from "../../stores/authStore.js";
 import { useRouter } from "vue-router";
 
@@ -50,6 +57,7 @@ const router = useRouter();
 const store = useAuthStore();
 const props = defineProps(["action"]);
 const email = ref("");
+const username = ref("");
 const password = ref("");
 const action = ref(props.action);
 const isLoading = ref(false);
@@ -62,14 +70,17 @@ const storeError = computed(() => {
 });
 
 const submitForm = async () => {
-  error.value = "";
+	error.value = "";
 	if (action.value === "signup") {
 		const re =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 		if (!email.value.match(re)) {
 			error.value = "invalid email";
-
+			return;
+		}
+		if (username.value.length < 3) {
+			error.value = "Username must be at least 3 characters";
 			return;
 		}
 		if (password.value.length < 8) {
@@ -80,7 +91,6 @@ const submitForm = async () => {
 	}
 
 	try {
-		isLoading.value = true;
 		if (action.value === "login") {
 			store.login({
 				email: email.value,
@@ -89,16 +99,18 @@ const submitForm = async () => {
 		} else {
 			store.signup({
 				email: email.value,
+				username: username.value,
 				password: password.value,
 			});
 		}
+
 	} catch (err) {
 		console.log(err.message);
 	}
-	isLoading.value = false;
 };
 
 const switchCaption = () => {
+	error.value = "";
 	if (action.value === "signup") {
 		action.value = "login";
 		router.replace("/auth/" + action.value);

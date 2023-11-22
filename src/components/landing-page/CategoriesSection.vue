@@ -12,37 +12,35 @@
 		</base-heading>
 		<div class="container">
 			<base-card>
-				<img
-					src="../../assets/img/analytics.svg"
-					alt="analytics icon" />
+				<IconReportAnalytics></IconReportAnalytics>
 				<span>Management & Leadership</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/money.svg" alt="money icon" />
+				<IconCoinEuro></IconCoinEuro>
 				<span>Business</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/arrow.svg" alt="arrow icon" />
+				<IconPlant></IconPlant>
 				<span>Entrepreneurship</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/banknote.svg" alt="banknote icon" />
+				<IconWallet></IconWallet>
 				<span>Money $ Finance</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/trophy.svg" alt="Tropy icon" />
+				<IconTrophy></IconTrophy>
 				<span>Career & Success</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/speedtest.svg" alt="speed icon" />
+				<IconBrandSpeedtest></IconBrandSpeedtest>
 				<span>Productivity</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/heart.svg" alt="Heart icon" />
+				<IconHeartShare></IconHeartShare>
 				<span>Health & Well-Being</span>
 			</base-card>
 			<base-card>
-				<img src="../../assets/img/messeges.svg" alt="messeges icon" />
+				<IconMessages></IconMessages>
 				<span>Communication</span>
 			</base-card>
 		</div>
@@ -52,7 +50,18 @@
 	</base-section>
 </template>
 
-<script setup></script>
+<script setup>
+import {
+	IconReportAnalytics,
+	IconCoinEuro,
+	IconPlant,
+	IconWallet,
+	IconTrophy,
+	IconBrandSpeedtest,
+	IconHeartShare,
+	IconMessages,
+} from "@tabler/icons-vue";
+</script>
 
 <style lang="scss" scoped>
 section {

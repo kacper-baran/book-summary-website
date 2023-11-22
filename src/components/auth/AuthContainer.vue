@@ -14,6 +14,11 @@
 				</router-link>
 			</div>
 			<slot></slot>
+			<div class="account">
+				<p>test account</p>
+				<p>email: test@test.com</p>
+				<p>password: 12345678</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -59,7 +64,15 @@
 
 .form-container {
 	width: 90%;
-  margin-inline: auto;
+	margin-inline: auto;
+}
+
+.account {
+  margin-top: 1em;
+  border: 1px solid;
+  border-color: var(--color-border);
+  padding: 1em;
+  border-radius: 8px;
 }
 
 @media (min-width: 768px) {
@@ -81,6 +94,9 @@
 		width: 100%;
 	}
 	.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 		position: relative;
 		height: 100vh;
 		width: 80%;
