@@ -6,8 +6,11 @@ I used firebase realtime database to store user data and summaries and firebase 
 
 ## Built with
 
-Vue
-SCSS
+<ul>
+  <li>Vue</li>
+  <li>SCSS</li>
+</ul>
+
 
 
 ### screen shots for this project
