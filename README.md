@@ -16,8 +16,7 @@ SCSS
 
 
 <img width="1238" alt="img2-VOz1Px4w" src="https://github.com/kacper-baran/book-summary-website/assets/146641945/6a63b62b-f5cc-4cdc-8f8c-3d88f6fae859">
-![img3-ZCEG2oD6](https://github.com/kacper-baran/book-summary-website/assets/146641945/ff82b2df-44d6-47ce-b05f-29efabd1f65e)
-
+<img width="1211" alt="img4-Y9rrRrXZ" src="https://github.com/kacper-baran/book-summary-website/assets/146641945/ff82b2df-44d6-47ce-b05f-29efabd1f65e">
 <img width="1211" alt="img4-Y9rrRrXZ" src="https://github.com/kacper-baran/book-summary-website/assets/146641945/9045b67e-0f61-46bd-b7b4-7abedf46e0c6">
 <img width="1211" alt="img5-gTHfELiZ" src="https://github.com/kacper-baran/book-summary-website/assets/146641945/3c710df9-4393-4725-ad59-c966a2b8c06e">
 <img width="1211" alt="img6-hjJDGfPB" src="https://github.com/kacper-baran/book-summary-website/assets/146641945/0904628f-4862-43d4-b9f8-1aa4ed2df50e">
