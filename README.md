@@ -1,4 +1,4 @@
-### About the project
+# About the project
 
 Booker is a website where you can read and create summaries of books.
 
