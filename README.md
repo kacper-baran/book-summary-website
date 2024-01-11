@@ -10,3 +10,8 @@ Vue
 SCSS
 
 
+### screen shots for this project
+
+![booker-full-PrZZoNL7](https://github.com/kacper-baran/book-summary-website/assets/146641945/0369381e-f070-472f-90f4-dfcc198c4998)
+
+
