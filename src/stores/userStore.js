@@ -57,7 +57,7 @@ export const useUserStore = defineStore("user", {
 				}
 			);
 
-      authStore.logout()
+			authStore.logout();
 		},
 		async registerUser(data) {
 			const authStore = useAuthStore();
@@ -94,15 +94,15 @@ export const useUserStore = defineStore("user", {
 			}
 			const data = {};
 
-				if (!responseData.savedSummaries) {
-					data.savedSummaries = [];
-				}
-				if (!responseData.favoriteSummaries) {
-					data.favoriteSummaries = [];
-				}
-				if (!responseData.writtenSummaries) {
-					data.writtenSummaries = [];
-				}
+			if (!responseData.savedSummaries) {
+				data.savedSummaries = [];
+			}
+			if (!responseData.favoriteSummaries) {
+				data.favoriteSummaries = [];
+			}
+			if (!responseData.writtenSummaries) {
+				data.writtenSummaries = [];
+			}
 			this.user = {
 				...responseData,
 				...data,

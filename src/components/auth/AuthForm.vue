@@ -27,6 +27,7 @@
 					id="password"
 					name="password"
 					v-model.trim="password"
+					autocomplete="current-password"
 					placeholder="Enter your password" />
 			</div>
 			<p class="error">
@@ -103,7 +104,6 @@ const submitForm = async () => {
 				password: password.value,
 			});
 		}
-
 	} catch (err) {
 		console.log(err.message);
 	}

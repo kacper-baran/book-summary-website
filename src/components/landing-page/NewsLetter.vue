@@ -2,7 +2,7 @@
 	<base-section bg="white" width="wide">
 		<div class="card">
 			<div class="card-header">
-				<h2>Sign up to news letter👋</h2>
+				<h2>Sign up to our newsletter👋</h2>
 				<p>Get samples of our best book guides</p>
 			</div>
 			<div class="email-input">

@@ -46,7 +46,7 @@ a {
 		}
 	}
 	&.accent {
-		background-color: #48dfe3;
+		background-color: var(--button-background-color-accent);
 		font-weight: 700;
 		border: 2px solid;
 		border-color: var(--color-border-hover);

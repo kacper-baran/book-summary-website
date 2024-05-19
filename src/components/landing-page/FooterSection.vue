@@ -57,7 +57,7 @@
 				</a>
 			</div>
 		</footer>
-		<p>Copyright © 2023 | All Rights Reserved</p>
+		<p>Copyright © {{ year }} | All Rights Reserved</p>
 	</base-section>
 </template>
 
@@ -70,6 +70,8 @@ import {
 	IconMail,
 	IconMapPin,
 } from "@tabler/icons-vue";
+
+const year = new Date().getFullYear();
 </script>
 
 <style lang="scss" scoped>
@@ -93,11 +95,12 @@ import {
 ul {
 	list-style: none;
 	min-width: 180px;
-  li, li > * {
-    display: flex;
-    gap: .3em;
-    align-items: center;
-  }
+	li,
+	li > * {
+		display: flex;
+		gap: 0.3em;
+		align-items: center;
+	}
 }
 
 ul:last-of-type {
