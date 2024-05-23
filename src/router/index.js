@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-
-import LandingPage from "../pages/LandingPage.vue";
-const AuthPage = () => import("../pages/AuthPage.vue");
+import AuthPage from "../pages/AuthPage.vue";
 const BookApp = () => import("../pages/bookapp/BookApp.vue");
 const DiscoverSection = () =>
 	import("../components/book-app/DiscoverSection.vue");
@@ -17,9 +15,7 @@ const BookDetailsPage = () => import("../pages/bookapp/BookDetailsPage.vue");
 const BookDetails = () => import("../components/book-app/UI/BookDetails.vue");
 const NotFoundPage = () => import("../pages/NotFoundPage.vue");
 const BookAppNotFound = () => import("../pages/bookapp/BookAppNotFound.vue");
-const AboutSection = () => import("../components/landing-page/BestSection.vue");
-const PricingSection = () =>
-	import("../components/landing-page/PricingSection.vue");
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	scrollBehavior(_, _2, savedPosition) {
@@ -32,22 +28,10 @@ const router = createRouter({
 		{
 			path: "/",
 			name: "home",
-			component: LandingPage,
+			redirect: "/auth",
 		},
 		{
-			path: "/about",
-			name: "about",
-			hash: "#best",
-			component: AboutSection,
-		},
-		{
-			path: "/pricing",
-			name: "pricing",
-			hash: "#pricing",
-			component: PricingSection,
-		},
-		{
-			path: "/auth/:action",
+			path: "/:action",
 			name: "auth",
 			props: true,
 			component: AuthPage,

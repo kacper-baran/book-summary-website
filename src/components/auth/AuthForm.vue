@@ -9,6 +9,7 @@
 					id="email"
 					name="email"
 					v-model.trim="email"
+					autocomplete="email"
 					placeholder="Enter your e-mail" />
 			</div>
 			<div class="form-field" v-if="action === 'signup'">
@@ -20,6 +21,7 @@
 					v-model.trim="username"
 					placeholder="Enter your username" />
 			</div>
+
 			<div class="form-field">
 				<label for="password">Password:</label>
 				<input
@@ -30,6 +32,16 @@
 					autocomplete="current-password"
 					placeholder="Enter your password" />
 			</div>
+			<!-- <div class="form-field" v-if="action === 'signup'">
+				<label for="email">Repeat Password</label>
+				<input
+					type="text"
+					id="repeat-password"
+					name="repeat-password"
+					v-model.trim="repeatPassword"
+					autocomplete="current-password"
+					placeholder="Enter your username" />
+			</div> -->
 			<p class="error">
 				{{ error || storeError }}
 			</p>
@@ -60,9 +72,16 @@ const props = defineProps(["action"]);
 const email = ref("");
 const username = ref("");
 const password = ref("");
+// const repeatPassword = ref("");
+
 const action = ref(props.action);
+
 const isLoading = ref(false);
 const error = ref("");
+
+if (action.value !== "login" || action.value !== "signup") {
+	router.replace("/login");
+}
 
 const storeError = computed(() => {
 	if (store.error) {
@@ -76,36 +95,59 @@ const submitForm = async () => {
 		const re =
 			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-		if (!email.value.match(re)) {
-			error.value = "invalid email";
-			return;
-		}
-		if (username.value.length < 3) {
-			error.value = "Username must be at least 3 characters";
-			return;
-		}
-		if (password.value.length < 8) {
-			error.value = "Password must be at least 8 characters long";
-			return;
-		}
+		// if (!email.value.match(re)) {
+		// 	error.value = "invalid email";
+		// 	return;
+		// }
+		// if (username.value.length < 3) {
+		// 	error.value = "Username must be at least 3 characters";
+		// 	return;
+		// }
+		// if (password.value.length < 8) {
+		// 	error.value = "Password must be at least 8 characters long";
+		// 	return;
+		// }
 		error.value = "";
 	}
 
+	if (action.value !== "signup") {
+		error.value = "test";
+		const auth = await store.auth({
+			email: email.value,
+			password: password.value,
+			action: action.value,
+		});
+	} else {
+		store.auth({
+			email: email.value,
+			username: username.value,
+			password: password.value,
+			action: action.value,
+		});
+	}
+
 	try {
-		if (action.value === "login") {
-			store.login({
-				email: email.value,
-				password: password.value,
-			});
-		} else {
-			store.signup({
-				email: email.value,
-				username: username.value,
-				password: password.value,
-			});
-		}
-	} catch (err) {
-		console.log(err.message);
+		// store.auth({
+		// 	email: email.value,
+		// 	password: password.value,
+		// 	action: action.value,
+		// });
+		// if (action.value !== "signup") {
+		// 	store.auth({
+		// 		email: email.value,
+		// 		password: password.value,
+		// 		action: action.value,
+		// 	});
+		// } else {
+		// 	store.auth({
+		// 		email: email.value,
+		// 		username: username.value,
+		// 		password: password.value,
+		// 		action: action.value,
+		// 	});
+		// }
+	} catch (error) {
+		console.log(error.message);
 	}
 };
 
@@ -113,10 +155,10 @@ const switchCaption = () => {
 	error.value = "";
 	if (action.value === "signup") {
 		action.value = "login";
-		router.replace("/auth/" + action.value);
+		router.replace(action.value);
 	} else {
 		action.value = "signup";
-		router.replace("/auth/" + action.value);
+		router.replace(action.value);
 	}
 };
 
@@ -145,5 +187,10 @@ const linkButtonCaption = computed(() => {
 <style lang="scss" scoped>
 .error:first-letter {
 	text-transform: uppercase;
+}
+form {
+	border: 1px solid white;
+	padding: 2rem;
+	border-radius: 8px;
 }
 </style>

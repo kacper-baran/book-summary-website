@@ -30,7 +30,7 @@ if (!userStore.user) {
 }
 
 if (!authStore.isLoggedIn) {
-	router.replace("/auth/login");
+	router.replace("/login");
 }
 </script>
 

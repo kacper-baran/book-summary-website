@@ -20,7 +20,6 @@ export const useAuthStore = defineStore("auth", {
 	actions: {
 		async auth(payload) {
 			const userStore = useUserStore();
-			const booksStore = useBooksStore();
 
 			this.error = null;
 			const action = payload.action;
@@ -44,8 +43,8 @@ export const useAuthStore = defineStore("auth", {
 			const responseData = await response.json();
 
 			if (!response.ok) {
-				this.error = responseData.error.message;
-				return;
+				console.log(responseData);
+				throw new Error(responseData.message);
 			}
 
 			localStorage.setItem("token", responseData.idToken);
@@ -62,20 +61,7 @@ export const useAuthStore = defineStore("auth", {
 
 			this.isLoggedIn = true;
 			router.replace("/bookapp");
-		},
-		login(payload) {
-			this.error = null;
-			this.auth({
-				...payload,
-				action: "login",
-			});
-		},
-		signup(payload) {
-			this.error = null;
-			this.auth({
-				...payload,
-				action: "signup",
-			});
+			return "success";
 		},
 		logout() {
 			localStorage.removeItem("token");
@@ -95,7 +81,7 @@ export const useAuthStore = defineStore("auth", {
 				this.token = token;
 				this.isLoggedIn = true;
 			} else {
-				router.replace("/auth/login");
+				router.replace("/login");
 			}
 		},
 	},

@@ -30,7 +30,7 @@ a {
 	display: inline-block;
 	text-align: center;
 	border: 2px solid;
-	padding: 0.8rem 2.4rem;
+	padding: 0.6rem 2rem;
 	border-radius: 50px;
 	font-size: 1rem;
 	transition: border 0.3s, background-color 0.3s;

@@ -3,9 +3,7 @@
 		<base-heading>
 			<template #title> Page not found </template>
 			<template #text>
-				<base-button link to="/"
-					>Go to the landing page</base-button
-				>
+				<base-button link to="/login">Go back</base-button>
 			</template>
 		</base-heading>
 	</div>

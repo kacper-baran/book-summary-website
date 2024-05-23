@@ -1,11 +1,5 @@
 <template>
 	<div class="container">
-		<div class="hero">
-			<img
-				class="hero-img"
-				src="../../assets/img/books-2463779_1280.jpg"
-				alt="Books" />
-		</div>
 		<div class="form-container">
 			<div class="logo-container">
 				<router-link to="/" class="logo">
@@ -22,21 +16,31 @@
 
 <style lang="scss" scoped>
 .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
-	display: grid;
-	grid-template-rows: 1fr 1fr;
 	gap: 1em;
 	min-height: 100vh;
-}
-.hero {
-	height: 200px;
-	width: 100vw;
-	overflow: hidden;
-}
-.hero-img {
 	width: 100%;
-	object-fit: cover;
-	scale: 2;
+	--s: 200px; /* control the size */
+	--c1: #1d1d1d;
+	--c2: #4e4f51;
+	--c3: #3c3c3c;
+
+	background: repeating-conic-gradient(
+				from 30deg,
+				#0000 0 120deg,
+				var(--c3) 0 180deg
+			)
+			calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+		repeating-conic-gradient(
+			from 30deg,
+			var(--c1) 0 60deg,
+			var(--c2) 0 120deg,
+			var(--c3) 0 180deg
+		);
+	background-size: var(--s) calc(var(--s) * 0.577);
 }
 
 .logo-container {
@@ -58,48 +62,29 @@
 }
 
 .form-container {
-	width: 90%;
 	margin-inline: auto;
+  max-width: 400px;
 }
-
 
 @media (min-width: 768px) {
 	.container {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-		place-items: center;
 		width: 100vw;
 		height: 100vh;
 	}
 
-	.hero {
-		height: 100vh;
-		width: auto;
-	}
-	.hero-img {
-		scale: 1;
-		height: 100%;
-		width: 100%;
-	}
 	.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		position: relative;
 		height: 100vh;
-		width: 80%;
+		width: 100%;
 		display: flex;
 		align-items: center;
 	}
 
 	.logo-container {
 		top: 0;
-	}
-}
-
-@media (min-width: 1190px) {
-	.form-container {
-		width: 60%;
 	}
 }
 </style>
