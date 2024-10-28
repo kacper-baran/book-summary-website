@@ -24,7 +24,7 @@ export const useAuthStore = defineStore("auth", {
 
 			this.error = null;
 			const action = payload.action;
-			const API_KEY = "AIzaSyAto8sH0Qauq9T2Blg-qkH6DQ3RDcijRCo";
+			const API_KEY = "***";
 
 			let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
 
