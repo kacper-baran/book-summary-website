@@ -21,7 +21,7 @@ export const useUserStore = defineStore("user", {
 			const authStore = useAuthStore();
 			const token = authStore.token;
 			const userId = authStore.userId;
-			const API_KEY = "AIzaSyAto8sH0Qauq9T2Blg-qkH6DQ3RDcijRCo";
+			const API_KEY = "*";
 
 			const deleteAccount = fetch(
 				`https://identitytoolkit.googleapis.com/v1/accounts:delete?key=${API_KEY}`,
